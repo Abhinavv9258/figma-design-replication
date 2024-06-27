@@ -1,0 +1,8 @@
+# Ignore the node_modules directory, which contains downloaded packages
+node_modules/
+
+# Ignore environment variables file, which may contain sensitive information
+.env
+
+# Ignore the directory for IDE specific files (e.g., Visual Studio Code)
+.vscode/
