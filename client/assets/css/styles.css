@@ -75,9 +75,54 @@ nav ul li a {
     line-height: 50px;
 }
 
+/* developmental wonders */
+.developmental-wonders {
+    text-align: center;
+}
+
+
+.developmental-wonders .wonders {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 974px;
+}
+
+.developmental-wonders h2 {
+    margin-top: 41px;
+    margin-bottom: 64px;
+}
+
+.wonder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 258px;
+}
+
+.wonder {
+    background-color: #F5EAE2;
+    border-radius: 8px;
+    width: 199px;
+    height: 265px;
+}
+
+
+video {
+    border-radius: 8px;
+    width: 258px;
+    height: 143.22px;
+}
+
+.line-svg {
+    margin-top: 64px;
+    margin-bottom: 64px;
+}
 
 @media only screen and (max-width: 992px) {
-    
+
     header {
         background: #fff;
         padding: 12px 9px;
@@ -126,6 +171,11 @@ nav ul li a {
         padding-top: 43px;
         padding-bottom: 57px;
         color: #fff;
+    }
+
+    .wonders {
+        display: flex;
+        flex-direction: column;
     }
 
 }
