@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('popup-container').classList.remove('show');
     });
 
-    document.getElementById('demo-form').addEventListener('submit', function (event) {
+    document.getElementById('demo-form').addEventListener('submit', async function (event) {
         event.preventDefault();
 
         const name = document.getElementById('name').value;
@@ -36,8 +36,24 @@ document.addEventListener('DOMContentLoaded', function () {
             babyStage: babyStage
         };
 
-        localStorage.setItem('applicationData', JSON.stringify(formData));
-        alert('Form submitted!');
+        try {
+            const response = await fetch('/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            });
+
+            if (!response.ok) {
+                throw new Error('Form submission failed');
+            }
+            alert('Form submitted successfully!');
+            document.getElementById('popup-container').classList.remove('show');
+        } catch (error) {
+            console.error('Error submitting form:', error);
+            alert('Error submitting form. Please try again.');
+        }
         document.getElementById('popup-container').classList.remove('show');
     });
 
