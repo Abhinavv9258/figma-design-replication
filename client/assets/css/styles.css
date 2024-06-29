@@ -121,6 +121,64 @@ video {
     margin-bottom: 64px;
 }
 
+
+/* happy parents */
+.happy-parents h1,
+.happy-parents p,
+.happy-parents-button-section {
+    position: relative;
+    text-align: center;
+}
+
+.happy-parents-list-container {
+    position: relative;
+}
+
+.happy-parents-list {
+    margin: auto;
+    margin-top: 17px;
+    width: 81%;
+    display: flex;
+    overflow-x: scroll;
+}
+
+
+.happy-parents-list .happy-parents {
+    min-width: 360px;
+    min-height: 358px;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 4px 12px 0 rgb(19 15 46 / .06);
+    margin-left: 40px;
+    margin-bottom: 20px;
+
+}
+
+.happy-parents-quote {
+    display: flex;
+    align-items: flex-start;
+    margin: 24px;
+}
+
+
+.happy-parents-button {
+    background-color: white;
+    color: #FF3F4E;
+    border: 1px solid #FF3F4E;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.happy-parents h1,
+.happy-parents p,
+.happy-parents-quote p {
+    color: #002863;
+
+}
+
+
 @media only screen and (max-width: 992px) {
 
     header {
