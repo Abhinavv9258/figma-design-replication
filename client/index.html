@@ -10,28 +10,31 @@
 </head>
 
 <body>
-    <header>
+    <header class="sticky">
         <nav>
             <div class="logo">
                 <img src="./assets/images/image_1.svg" alt="UpTodd">
             </div>
             <ul>
-                <li class="menu"><a href="#">Home</a></li>
-                <li class="menu"><a href="#">Programs</a></li>
-                <li class="menu"><a href="#">Success Story</a></li>
-                <li class="menu"><a href="#">About</a></li>
+                <li class="menu"><a href="#container">Home</a></li>
+                <li class="menu"><a href="#developmental-wonders">Programs</a></li>
+                <li class="menu"><a href="#happy-parents">Success Story</a></li>
+                <li class="menu"><a href="#statistics-container">About</a></li>
                 <li><button id="demo-btn" class="demo-btn">Book a Free Demo</button></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section class="achievers">
+        <section class="container" id="container">
+
+        </section>
+        <section class="achievers" id="achievers">
             <p>Achievers</p>
             <h2>Real Stories: Watch Babies Thrive</h2>
         </section>
 
-        <section class="developmental-wonders">
+        <section class="developmental-wonders" id="developmental-wonders">
             <h2>Developmental Wonders: Early Learning Made Fun</h2>
             <div class="wonders">
 
@@ -159,7 +162,7 @@
 
 
 
-        <section class="statistics-container">
+        <section class="statistics-container" id="statistics-container">
             <div class="statistics">
                 <svg class="statistics-svg" width="48" height="48" viewBox="0 0 48 48" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
@@ -234,33 +237,40 @@
                 <img class="awarded-babies-slider-prev" src="https://www.uptodd.com/images/newWebsite/slider-prev.svg"
                     loading="lazy" alt="Prev Awarded Babies">
                 <div class="awarded-babies-list">
-                    <div class="awarded-babies">
+                    <div class="awarded-babies-item">
                         <div class="awarded-babies-image">
-                            <img src="./assets/images/image_28.svg">
+                            <img class="awarded-babies-background-img" src="./assets/images/image_28.svg">
+                            <img class="awarded-babies-front-img" src="./assets/images/Screenshot-2.svg">
                         </div>
                         <div class="awarded-babies-quote">
                             <p>UpTodd's Little Genius identified 416 Flashcards within 10 Minutes</p>
                         </div>
                     </div>
-                    <div class="awarded-babies">
+                    <div class="awarded-babies-item">
                         <div class="awarded-babies-image">
-                            <img src="./assets/images/image_28.svg">
+                            <img class="awarded-babies-background-img" src="./assets/images/image_28.svg">
+                            <img class="awarded-babies-front-img" src="./assets/images/Screenshot-2.svg">
+
                         </div>
                         <div class="awarded-babies-quote">
                             <p>UpTodd's Little Genius identified 416 Flashcards within 10 Minutes</p>
                         </div>
                     </div>
-                    <div class="awarded-babies">
+                    <div class="awarded-babies-item">
                         <div class="awarded-babies-image">
-                            <img src="./assets/images/image_28.svg">
+                            <img class="awarded-babies-background-img" src="./assets/images/image_28.svg">
+                            <img class="awarded-babies-front-img" src="./assets/images/Screenshot-2.svg">
+
                         </div>
                         <div class="awarded-babies-quote">
                             <p>UpTodd's Little Genius identified 416 Flashcards within 10 Minutes</p>
                         </div>
                     </div>
-                    <div class="awarded-babies">
+                    <div class="awarded-babies-item">
                         <div class="awarded-babies-image">
-                            <img src="./assets/images/image_28.svg">
+                            <img class="awarded-babies-background-img" src="./assets/images/image_28.svg">
+                            <img class="awarded-babies-front-img" src="./assets/images/Screenshot-2.svg">
+
                         </div>
                         <div class="awarded-babies-quote">
                             <p>UpTodd's Little Genius identified 416 Flashcards within 10 Minutes</p>
@@ -268,7 +278,7 @@
                     </div>
                 </div>
                 <img class="awarded-babies-slider-next" src="https://www.uptodd.com/images/newWebsite/slider-next.svg"
-                    loading="lazy" alt="Prev Awarded Babies">
+                    loading="lazy" alt="Next Awarded Babies">
             </div>
         </section>
 

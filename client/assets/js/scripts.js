@@ -13,6 +13,30 @@ const awardedBabiesBtnNext = document.querySelector('.awarded-babies-slider-next
 
 const awardedBabiesItemWidth = awardedBabiesListContainer.querySelector('.awarded-babies').offsetWidth + 20;
 
+document.addEventListener('DOMContentLoaded', function () {
+    const links = document.querySelectorAll('nav ul li.menu a');
+
+    links.forEach(link => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId);
+
+            if (targetSection) {
+                targetSection.scrollIntoView({
+                    behavior: 'smooth'
+                });
+
+                links.forEach(l => l.parentElement.classList.remove('active'));
+
+                this.parentElement.classList.add('active');
+            }
+        });
+    });
+    const homeButton = document.querySelector('nav ul li.menu:first-child a');
+    homeButton.parentElement.classList.add('active');
+});
 
 
 playButtons.forEach(button => {

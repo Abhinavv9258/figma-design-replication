@@ -5,11 +5,31 @@ body {
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+body,
+html {
+    overflow: scroll;
+}
+
+body::-webkit-scrollbar,
+html::-webkit-scrollbar {
+    display: none;
+}
+
 /* navbar */
 header {
+    display: flex;
+    align-items: center;
+    position: fixed;
     background: #fff;
-    padding: 12px 62px;
-    height: 58px;
+    /* padding-left: 62px; */
+    z-index: 100;
+    top: 0;
+    height: 82px;
+    width: 100%;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -17,7 +37,15 @@ nav {
     display: flex;
     justify-content: space-between;
     height: 58px;
+    width: 100%;
+    margin-left: 62px;
+    margin-right: 62px;
+
     align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #fff;
 }
 
 nav .logo {
@@ -27,12 +55,15 @@ nav .logo {
 nav .logo img {
     height: 44px;
     width: 133.31px;
+    /* width: auto; */
+    /* margin-left: 20px; */
 }
 
 nav ul {
-    list-style: none;
+    list-style-type: none;
     display: flex;
     padding: 0;
+    margin: 0;
     font-weight: bold;
 }
 
@@ -45,6 +76,11 @@ nav ul li {
 nav ul li a {
     text-decoration: none;
     color: #333;
+    transition: color 0.3s ease;
+}
+
+ul li a:hover {
+    color: #ff3366;
 }
 
 .demo-btn {
@@ -58,11 +94,32 @@ nav ul li a {
     border-radius: 8px;
     width: 176px;
     letter-spacing: -0.5px;
+    transition: #ff3366 0.3s ease;
+}
+
+.sticky {
+    top: 0;
+    background-color: #fff;
+}
+
+.menu.active a {
+    color: #FF3F4E;
+}
+
+.container {
+    height: 82px;
 }
 
 /* main section */
 .achievers {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: center;
     height: 112px;
+    /* height: 182px; */
+    flex-direction: column;
     text-align: center;
     padding: 69px 0;
     color: #fff;
@@ -88,6 +145,7 @@ nav ul li a {
 .developmental-wonders h2 {
     margin-top: 41px;
     margin-bottom: 0;
+    color: #002863;
 }
 
 .developmental-wonders .wonders {
@@ -233,7 +291,6 @@ nav ul li a {
     box-shadow: 0 4px 12px 0 rgba(19, 15, 46, 0.06);
     flex-shrink: 0;
     overflow: hidden;
-
 }
 
 .happy-parents-image {
@@ -346,6 +403,12 @@ nav ul li a {
 /* awarded babies*/
 .awarded-babies h1 {
     text-align: center;
+    color: #002863;
+}
+
+.awarded-babies {
+    margin-left: 90px;
+    margin-right: 90px;
 }
 
 .awarded-babies-list-container {
@@ -361,41 +424,64 @@ nav ul li a {
 
 .awarded-babies-list {
     margin: auto;
-    margin-top: 17px;
-    /* width: 81%; */
+    margin-top: 20px;
+    padding: 20px 0;
     max-width: 1140px;
     display: flex;
     overflow-x: scroll;
+    scroll-behavior: smooth;
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
 
 
-.awarded-babies-list .awarded-babies {
+.awarded-babies-list .awarded-babies-item {
     width: 360px;
+    min-width: none;
     height: 338px;
     border-radius: 12px;
     background: #fff;
     box-shadow: 0 4px 12px 0 rgb(19 15 46 / .06);
     margin-left: 40px;
     margin-bottom: 20px;
+    flex-shrink: 0;
+    overflow: hidden;
 }
 
-.awarded-babies-image {
+/* .awarded-babies-image {
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: row-reverse;
-}
+} */
 
-.awarded-babies-image img {
+.awarded-babies-image .awarded-babies-background-img {
     width: 360px;
     height: 223px;
     transform: scaleX(-1)
 }
 
+/* .awarded-babies-background-img {
+    width: 100%;
+} */
+
+.awarded-babies-front-img {
+    position: relative;
+    bottom: 170px;
+    left: 15px;
+    width: 230px;
+    height: 155px;
+    border-radius: 12px 0px 0px 0px;
+    border: 4px #ffff;
+}
+
 .awarded-babies-quote {
     display: flex;
+    position: relative;
+    bottom: 170px;
+    left: 26px;
     align-items: flex-start;
-    margin: 24px;
+
 }
 
 .awarded-babies h1 {
@@ -430,15 +516,29 @@ nav ul li a {
 /* start now banner */
 .start-now-banner {
     color: #fff;
-    padding: 48px 14%;
+    padding-top: 48px;
+    padding-bottom: 48px;
+    height: 160px;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: space-around;
+    padding-left: 192px;
+    padding-right: 192px;
     background-image: linear-gradient(to top, #5A40C4, #4B5ADB);
 }
 
 .start-now-banner p {
     margin: 0;
     padding: 0;
+    max-width: 718px;
+    color: #fff;
+    font-family: "DM Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 32px;
+    letter-spacing: -.8px;
+    /* width: 80%; */
 }
 
 .start-now-banner-btn {
@@ -450,7 +550,7 @@ nav ul li a {
     font-size: 16px;
     height: 48px;
     border-radius: 8px;
-    width: 176px;
+    min-width: 164px;
     letter-spacing: -0.5px;
 }
 
@@ -615,6 +715,7 @@ footer {
     height: fit-content;
     color: #002863;
     font-weight: 500;
+    max-width: 595px;
     margin-top: 50px;
 }
 
@@ -644,15 +745,62 @@ footer {
     align-items: center;
     justify-content: space-between;
     padding-left: 128px;
-    padding-right: 194px;
+    padding-right: 128px;
 }
 
 
-@media only screen and (max-width: 992px) {
+/* Large devices (laptops/desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .achievers {
+        height: 112px;
+        text-align: center;
+        padding-top: 43px;
+        padding-bottom: 57px;
+        color: #fff;
+    }
 
+    .happy-parents-slider-next,
+    .happy-parents-slider-prev {
+        display: none !important;
+    }
+
+    .awarded-babies-slider-next,
+    .awarded-babies-slider-prev {
+        display: none !important;
+    }
+
+    .statistics-container {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        height: auto;
+        gap: 10px;
+    }
+
+    .statistics {
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        align-items: center;
+    }
+
+    .statistics-svg {
+        margin-left: 25px;
+        margin-right: 22px;
+        margin-bottom: 17px;
+        margin-top: 17px;
+    }
+
+    .statistics-text {
+        margin: 0px;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 992px) {
     header {
         background: #fff;
-        padding: 12px 9px;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 
@@ -700,15 +848,41 @@ footer {
         color: #fff;
     }
 
+    .start-now-banner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .start-now-banner p {
+        margin: 0;
+        padding: 0;
+        /* max-width: 321px; */
+    }
+
+    .start-now-banner-btn {
+        margin-top: 20px;
+        min-width: 324px;
+    }
+
     .happy-parents-slider-next,
-    .happy-parents-slider-pre {
+    .happy-parents-slider-prev {
+        display: none !important;
+    }
+
+    .awarded-babies-slider-next,
+    .awarded-babies-slider-prev {
         display: none !important;
     }
 
     .wonders {
         display: flex;
         flex-direction: column;
-
     }
 
     .arrow {
@@ -741,11 +915,320 @@ footer {
         margin-right: 22px;
         margin-bottom: 17px;
         margin-top: 17px;
-
     }
 
     .statistics-text {
         margin: 0px;
     }
 
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        padding-top: 36px;
+        padding-bottom: 26px;
+        height: 542px;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .footer-text {
+        margin: 0;
+    }
+
+    .footer-img-container {
+        margin-top: 24px;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media (min-width: 600px) and (max-width: 768px) {
+    header {
+        background: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    nav {
+        height: 40px;
+        padding-left: 9px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    nav .logo img {
+        height: 39px;
+        width: 118px;
+    }
+
+    nav ul {
+        display: flex;
+        margin: 0;
+        align-items: flex-start;
+    }
+
+    nav ul .menu {
+        display: none;
+    }
+
+    .demo-btn {
+        padding: 9px 15px;
+        background: #ff3366;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        font-size: 14px;
+        height: 40px;
+        border-radius: 8px;
+        width: 147px;
+        letter-spacing: -0.5px;
+    }
+
+    .achievers {
+        height: 112px;
+        text-align: center;
+        padding-top: 43px;
+        padding-bottom: 57px;
+        color: #fff;
+    }
+
+
+    .start-now-banner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: auto;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .start-now-banner p {
+        margin: 0;
+        padding: 0;
+        /* max-width: 321px; */
+    }
+
+    .start-now-banner-btn {
+        margin-top: 20px;
+        min-width: 324px;
+    }
+
+    .happy-parents-slider-next,
+    .happy-parents-slider-prev {
+        display: none !important;
+    }
+
+    .awarded-babies-slider-next,
+    .awarded-babies-slider-prev {
+        display: none !important;
+    }
+
+    .wonders {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .arrow {
+        display: flex;
+        justify-content: center;
+    }
+
+    .arrow-img {
+        transform: rotate(90deg);
+    }
+
+    .statistics-container {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        height: auto;
+        gap: 10px;
+    }
+
+    .statistics {
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        align-items: center;
+    }
+
+    .statistics-svg {
+        margin-left: 25px;
+        margin-right: 22px;
+        margin-bottom: 17px;
+        margin-top: 17px;
+    }
+
+    .statistics-text {
+        margin: 0px;
+    }
+
+    .footer-container {
+        padding-left: 30px;
+        padding-right: 30px;
+        display: flex;
+        flex-direction: column;
+        padding-top: 36px;
+        padding-bottom: 26px;
+        height: 542px;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .footer-text {
+        margin: 0;
+    }
+
+    .footer-img-container {
+        margin-top: 24px;
+    }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media (max-width: 600px) {
+    header {
+        background: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    nav {
+        height: 40px;
+        padding-left: 9px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    nav .logo img {
+        height: 39px;
+        width: 118px;
+    }
+
+    nav ul {
+        display: flex;
+        margin: 0;
+        align-items: flex-start;
+    }
+
+    nav ul .menu {
+        display: none;
+    }
+
+    .demo-btn {
+        padding: 9px 15px;
+        background: #ff3366;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        font-size: 14px;
+        height: 40px;
+        border-radius: 8px;
+        width: 147px;
+        letter-spacing: -0.5px;
+    }
+
+    .achievers {
+        height: 112px;
+        text-align: center;
+        padding-top: 43px;
+        padding-bottom: 57px;
+        color: #fff;
+    }
+
+
+    .start-now-banner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .start-now-banner p {
+        margin: 0;
+        padding: 0;
+        /* max-width: 321px; */
+    }
+
+    .start-now-banner-btn {
+        margin-top: 20px;
+        min-width: 324px;
+    }
+
+    .happy-parents-slider-next,
+    .happy-parents-slider-prev {
+        display: none !important;
+    }
+
+    .awarded-babies-slider-next,
+    .awarded-babies-slider-prev {
+        display: none !important;
+    }
+
+    .wonders {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .arrow {
+        display: flex;
+        justify-content: center;
+    }
+
+    .arrow-img {
+        transform: rotate(90deg);
+    }
+
+    .statistics-container {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        height: auto;
+        gap: 10px;
+    }
+
+    .statistics {
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        align-items: center;
+    }
+
+    .statistics-svg {
+        margin-left: 25px;
+        margin-right: 22px;
+        margin-bottom: 17px;
+        margin-top: 17px;
+    }
+
+    .statistics-text {
+        margin: 0px;
+    }
+
+    .footer-container {
+        padding-left: 30px;
+        padding-right: 30px;
+        display: flex;
+        flex-direction: column;
+        padding-top: 36px;
+        padding-bottom: 26px;
+        height: 542px;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .footer-text {
+        margin: 0;
+    }
+
+    .footer-img-container {
+        margin-top: 24px;
+    }
 }
