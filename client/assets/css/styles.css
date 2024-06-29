@@ -268,6 +268,33 @@ video {
 
 }
 
+/* start now banner */
+.start-now-banner {
+    color: #fff;
+    padding: 48px 14%;
+    display: flex;
+    justify-content: space-between;
+    background-image: linear-gradient(to top, #5A40C4, #4B5ADB);
+}
+
+.start-now-banner p {
+    margin: 0;
+    padding: 0;
+}
+
+.start-now-banner-btn {
+    padding: 11px 23px;
+    background: #ff3366;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    height: 48px;
+    border-radius: 8px;
+    width: 176px;
+    letter-spacing: -0.5px;
+}
+
 @media only screen and (max-width: 992px) {
 
     header {
