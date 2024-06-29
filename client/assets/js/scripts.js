@@ -11,8 +11,6 @@ playButtons.forEach(button => {
 });
 
 
-
-
 document.addEventListener('DOMContentLoaded', function () {
     document.querySelector('.demo-btn').addEventListener('click', function () {
         document.getElementById('popup-container').classList.add('show');
