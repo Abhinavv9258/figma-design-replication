@@ -5,6 +5,7 @@ body {
     box-sizing: border-box;
 }
 
+/* navbar */
 header {
     background: #fff;
     padding: 12px 62px;
@@ -31,7 +32,6 @@ nav .logo img {
 nav ul {
     list-style: none;
     display: flex;
-    /* gap: 47px; */
     padding: 0;
     font-weight: bold;
 }
@@ -60,11 +60,7 @@ nav ul li a {
     letter-spacing: -0.5px;
 }
 
-
-main {
-    text-align: center;
-}
-
+/* main section */
 .achievers {
     height: 112px;
     text-align: center;
@@ -80,8 +76,8 @@ main {
 }
 
 
-
 @media only screen and (max-width: 992px) {
+    
     header {
         background: #fff;
         padding: 12px 9px;
@@ -131,4 +127,5 @@ main {
         padding-bottom: 57px;
         color: #fff;
     }
+
 }
