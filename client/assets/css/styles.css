@@ -198,6 +198,76 @@ video {
     flex: 1;
 }
 
+/* awarded babies*/
+.awarded-babies h1 {
+    text-align: center;
+}
+
+.awarded-babies-list-container {
+    position: relative;
+    background-color: #FFFBFB;
+}
+
+.awarded-babies-list {
+    margin: auto;
+    margin-top: 17px;
+    width: 81%;
+    display: flex;
+    overflow-x: scroll;
+}
+
+
+.awarded-babies-list .awarded-babies {
+    width: 360px;
+    height: 338px;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 4px 12px 0 rgb(19 15 46 / .06);
+    margin-left: 40px;
+    margin-bottom: 20px;
+
+}
+
+.awarded-babies-image {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.awarded-babies-image img {
+    width: 360px;
+    height: 223px;
+    transform: scaleX(-1)
+}
+
+.awarded-babies-quote {
+    display: flex;
+    align-items: flex-start;
+    margin: 24px;
+}
+
+
+.awarded-babies-button {
+    background-color: white;
+    color: #FF3F4E;
+    border: 1px solid #FF3F4E;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.awarded-babies h1 {
+    margin-top: 34px;
+    margin-bottom: 34px;
+}
+
+.awarded-babies h1,
+.awarded-babies p,
+.awarded-babies-quote p {
+    color: #002863;
+
+}
+
 @media only screen and (max-width: 992px) {
 
     header {
