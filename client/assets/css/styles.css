@@ -295,6 +295,26 @@ video {
     letter-spacing: -0.5px;
 }
 
+footer {
+    height: 435px;
+}
+
+.footer-container {
+    padding-top: 62px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 128px;
+    padding-right: 194px;
+}
+
+.footer-text {
+    font-size: 36px;
+    display: flex;
+    width: 640px;
+}
+
 @media only screen and (max-width: 992px) {
 
     header {
