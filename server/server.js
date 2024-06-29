@@ -53,7 +53,7 @@ const server = http.createServer(async (req, res) => {
                 try {
                     const formData = JSON.parse(body);
                     const db = await connectToDatabase();
-                    const result = await db.collection('demo').insertOne(formData);
+                    const result = await db.collection('demo-form').insertOne(formData);
                     console.log('Form data saved:', result.insertedId);
                     res.writeHead(201, { 'Content-Type': 'application/json' });
                     res.end(JSON.stringify({ message: 'Form data saved successfully' }));
