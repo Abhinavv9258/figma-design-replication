@@ -94,7 +94,7 @@ nav ul li a {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 974px;
+    max-width: 974px;
     display: flex;
     gap: 50px;
 }
@@ -190,38 +190,69 @@ nav ul li a {
 .happy-parents-button-section {
     position: relative;
     text-align: center;
+    color: #002863;
+}
+
+.happy-parents h1 span {
+    display: block;
+}
+
+.happy-parents {
+    margin-left: 90px;
+    margin-right: 90px;
 }
 
 .happy-parents-list-container {
     position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1184px;
+    margin: 0 auto;
 }
 
 .happy-parents-list {
-    margin: auto;
-    margin-top: 17px;
-    width: 81%;
     display: flex;
+    gap: 20px;
+    padding: 20px 0;
+    scroll-behavior: smooth;
+    overflow: hidden;
+    max-width: 1140px;
     overflow-x: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
-
-.happy-parents-list .happy-parents {
-    min-width: 360px;
-    min-height: 358px;
+.happy-parents-list .happy-parents-item {
+    max-width: 360px;
+    min-width: none;
     border-radius: 12px;
+    margin: 10px;
     background: #fff;
-    box-shadow: 0 4px 12px 0 rgb(19 15 46 / .06);
-    margin-left: 40px;
-    margin-bottom: 20px;
+    box-shadow: 0 4px 12px 0 rgba(19, 15, 46, 0.06);
+    flex-shrink: 0;
+    overflow: hidden;
 
+}
+
+.happy-parents-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
 }
 
 .happy-parents-quote {
     display: flex;
-    align-items: flex-start;
-    margin: 24px;
+    flex-direction: column;
+    align-items: left;
+    padding: 0 20px 20px;
 }
 
+.happy-parents-quote .quote-mark {
+    width: 24px;
+}
 
 .happy-parents-button {
     background-color: white;
@@ -231,33 +262,85 @@ nav ul li a {
     border-radius: 5px;
     cursor: pointer;
     margin-top: 20px;
+    display: inline-block;
 }
 
-.happy-parents h1,
-.happy-parents p,
-.happy-parents-quote p {
-    color: #002863;
-
+.happy-parents-slider-next,
+.happy-parents-slider-prev {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
 }
+
+.happy-parents-slider-prev {
+    left: -5px;
+}
+
+.happy-parents-slider-next {
+    right: -5px;
+}
+
+.happy-parents-list.expanded {
+    display: flex;
+    max-width: 100%;
+    overflow: visible;
+    flex-wrap: wrap;
+    justify-content: left;
+}
+
 
 /* statistics */
 .statistics-container {
     display: flex;
-    justify-content: space-around;
     padding: 43px 0;
     text-align: center;
+    width: 100%;
+    height: 120px;
+    justify-content: center;
+    gap: 100px;
 }
 
 .statistics {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 887px;
 }
 
-.stat {
-    flex: 1;
+.statistics-svg,
+.statistics-num,
+.statistics-text {
+    display: block;
+    text-align: center;
+    margin: 5px 0;
+}
+
+.statistics-svg {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 14px;
+}
+
+.statistics-number {
+    font-family: "DM Sans";
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: -0.04em;
+    text-align: center;
+    color: #002863;
+
+}
+
+.statistics-text {
+    font-family: "DM Sans";
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: -0.04em;
+    text-align: center;
+    color: #002863;
+    margin-top: -5px;
 }
 
 /* awarded babies*/
@@ -268,14 +351,23 @@ nav ul li a {
 .awarded-babies-list-container {
     position: relative;
     background-color: #FFFBFB;
+    max-width: 1184px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    overflow: hidden;
 }
 
 .awarded-babies-list {
     margin: auto;
     margin-top: 17px;
-    width: 81%;
+    /* width: 81%; */
+    max-width: 1140px;
     display: flex;
     overflow-x: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 
@@ -287,7 +379,6 @@ nav ul li a {
     box-shadow: 0 4px 12px 0 rgb(19 15 46 / .06);
     margin-left: 40px;
     margin-bottom: 20px;
-
 }
 
 .awarded-babies-image {
@@ -307,17 +398,6 @@ nav ul li a {
     margin: 24px;
 }
 
-
-.awarded-babies-button {
-    background-color: white;
-    color: #FF3F4E;
-    border: 1px solid #FF3F4E;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px;
-}
-
 .awarded-babies h1 {
     margin-top: 34px;
     margin-bottom: 34px;
@@ -327,8 +407,25 @@ nav ul li a {
 .awarded-babies p,
 .awarded-babies-quote p {
     color: #002863;
-
 }
+
+.awarded-babies-slider-next,
+.awarded-babies-slider-prev {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.awarded-babies-slider-prev {
+    left: -5px;
+}
+
+.awarded-babies-slider-next {
+    right: -5px;
+}
+
 
 /* start now banner */
 .start-now-banner {
@@ -505,7 +602,6 @@ form button {
 footer {
     height: 435px;
     width: 100%;
-    /* margin-top: 60px; */
     display: flex;
     justify-content: space-around;
 }
@@ -604,9 +700,15 @@ footer {
         color: #fff;
     }
 
+    .happy-parents-slider-next,
+    .happy-parents-slider-pre {
+        display: none !important;
+    }
+
     .wonders {
         display: flex;
         flex-direction: column;
+
     }
 
     .arrow {
@@ -616,6 +718,34 @@ footer {
 
     .arrow-img {
         transform: rotate(90deg);
+    }
+
+    .statistics-container {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        height: auto;
+        gap: 10px;
+    }
+
+    .statistics {
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        align-items: center;
+    }
+
+    .statistics-svg {
+        margin-left: 25px;
+        margin-right: 22px;
+        margin-bottom: 17px;
+        margin-top: 17px;
+
+    }
+
+    .statistics-text {
+        margin: 0px;
     }
 
 }

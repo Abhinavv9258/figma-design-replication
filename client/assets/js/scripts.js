@@ -1,5 +1,20 @@
 const playButtons = document.querySelectorAll(".play-button");
 
+const happyParentListContainer = document.querySelector('.happy-parents-list');
+const happyParentBtnPrev = document.querySelector('.happy-parents-slider-prev');
+const happyParentBtnNext = document.querySelector('.happy-parents-slider-next');
+const happyParentBtnSeeAll = document.querySelector('.happy-parents-button');
+
+const happyParentItemWidth = happyParentListContainer.querySelector('.happy-parents-item').offsetWidth + 20;
+
+const awardedBabiesListContainer = document.querySelector('.awarded-babies-list');
+const awardedBabiesBtnPrev = document.querySelector('.awarded-babies-slider-prev');
+const awardedBabiesBtnNext = document.querySelector('.awarded-babies-slider-next');
+
+const awardedBabiesItemWidth = awardedBabiesListContainer.querySelector('.awarded-babies').offsetWidth + 20;
+
+
+
 playButtons.forEach(button => {
     button.addEventListener("click", function () {
         const thumbnail = button.closest('.wonder').querySelector(".video-thumbnail");
@@ -9,6 +24,79 @@ playButtons.forEach(button => {
         iframe.style.display = "block";
     });
 });
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const happyParentUpdateButtons = () => {
+        const scrollLeft = happyParentListContainer.scrollLeft;
+        const scrollWidth = happyParentListContainer.scrollWidth;
+        const clientWidth = happyParentListContainer.clientWidth;
+        happyParentBtnPrev.style.display = scrollLeft === 0 ? 'none' : 'block';
+        happyParentBtnNext.style.display = scrollLeft + clientWidth >= scrollWidth ? 'none' : 'block';
+    };
+
+    happyParentBtnPrev.addEventListener('click', () => {
+        happyParentListContainer.scrollBy({
+            left: -happyParentItemWidth * 2,
+            behavior: 'smooth'
+        });
+    });
+
+    happyParentBtnNext.addEventListener('click', () => {
+        happyParentListContainer.scrollBy({
+            left: happyParentItemWidth * 2,
+            behavior: 'smooth'
+        });
+    });
+
+    happyParentListContainer.addEventListener('scroll', happyParentUpdateButtons);
+
+    happyParentUpdateButtons();
+
+    happyParentBtnSeeAll.addEventListener('click', () => {
+        happyParentListContainer.classList.toggle('expanded');
+        if (happyParentListContainer.classList.contains('expanded')) {
+            happyParentBtnSeeAll.textContent = 'Show Less';
+            happyParentBtnPrev.style.display = 'none';
+            happyParentBtnNext.style.display = 'none';
+        } else {
+            happyParentBtnSeeAll.textContent = 'See All';
+            happyParentUpdateButtons();
+        }
+    });
+});
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const awardedBabiesUpdateButtons = () => {
+        const scrollLeft = awardedBabiesListContainer.scrollLeft;
+        const scrollWidth = awardedBabiesListContainer.scrollWidth;
+        const clientWidth = awardedBabiesListContainer.clientWidth;
+        awardedBabiesBtnPrev.style.display = scrollLeft === 0 ? 'none' : 'block';
+        awardedBabiesBtnNext.style.display = scrollLeft + clientWidth >= scrollWidth ? 'none' : 'block';
+    };
+
+    awardedBabiesBtnPrev.addEventListener('click', () => {
+        awardedBabiesListContainer.scrollBy({
+            left: -awardedBabiesItemWidth * 2,
+            behavior: 'smooth'
+        });
+    });
+
+    awardedBabiesBtnNext.addEventListener('click', () => {
+        awardedBabiesListContainer.scrollBy({
+            left: awardedBabiesItemWidth * 2,
+            behavior: 'smooth'
+        });
+    });
+
+    awardedBabiesListContainer.addEventListener('scroll', awardedBabiesUpdateButtons);
+
+    awardedBabiesUpdateButtons();
+});
+
 
 
 document.addEventListener('DOMContentLoaded', function () {
