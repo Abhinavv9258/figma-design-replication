@@ -178,6 +178,25 @@ video {
 
 }
 
+/* statistics */
+.statistics-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 43px 0;
+    text-align: center;
+}
+
+.statistics {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 887px;
+}
+
+.stat {
+    flex: 1;
+}
 
 @media only screen and (max-width: 992px) {
 
