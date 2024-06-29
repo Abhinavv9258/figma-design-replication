@@ -78,46 +78,108 @@ nav ul li a {
 /* developmental wonders */
 .developmental-wonders {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
 }
 
+.developmental-wonders h2 {
+    margin-top: 41px;
+    margin-bottom: 0;
+}
 
 .developmental-wonders .wonders {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
     width: 974px;
-}
-
-.developmental-wonders h2 {
-    margin-top: 41px;
-    margin-bottom: 64px;
+    display: flex;
+    gap: 50px;
 }
 
 .wonder {
+    width: 200px;
+    height: 250px;
+    border-radius: 12px;
+    background: #F5EAE2;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 258px;
 }
 
-.wonder {
-    background-color: #F5EAE2;
-    border-radius: 8px;
-    width: 199px;
-    height: 265px;
+.wonder-header {
+    margin-bottom: 20px;
+    color: #002863;
+    text-align: center;
+    font-family: "DM Sans";
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -.6px;
+}
+
+.wonder-video-container {
+    position: relative;
+    width: 250px;
+    height: 140px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.video-thumbnail {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
 }
 
 
-video {
-    border-radius: 8px;
-    width: 258px;
-    height: 143.22px;
+.thumbnail-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 100px;
+    width: 50px;
+    height: 50px;
+    color: #ff5766;
+    background: rgb(255, 255, 255);
+    background-size: contain;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.play-icon {
+    width: 15px;
+    height: 20px;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 20px solid #ff5766;
+    transform: rotate(90deg);
+}
+
+.youtube-video {
+    display: none;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
 }
 
 .line-svg {
-    margin-top: 64px;
+    margin-top: 44px;
     margin-bottom: 64px;
 }
 
@@ -458,6 +520,15 @@ footer {
     .wonders {
         display: flex;
         flex-direction: column;
+    }
+
+    .arrow {
+        display: flex;
+        justify-content: center;
+    }
+
+    .arrow-img {
+        transform: rotate(90deg);
     }
 
 }
